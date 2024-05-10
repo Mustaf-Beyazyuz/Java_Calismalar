@@ -4,4 +4,4 @@ Ders 28 compareTo Methotları
 -örnek  :int result =  s1.compareTo(s2);
 
 Eğer sonuç negatif ise s1 , s2 den büyük oluyor. Eğer  sonuç  pozitif ise s2 , s1 den büyük oluyor. Eğer 0 ise yazılar
-özdeş oluyor.
+özdeş oluyor..
