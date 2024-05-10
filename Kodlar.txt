@@ -1,0 +1,118 @@
+/*----------------------------------------------------------------------------------------------------------------------
+Bir yazıyı istenilen karakter sayısına ve karaktere göre besleye kod yapısı. Java 11 ile repeat methodu kullanılarak yapıldı.
+-----------------------------------------------------------------------------------------------------------------------*/
+
+class padLeadingTrailing
+{
+    public static void run()
+    {
+        Scanner kb = new Scanner(System.in);
+
+        for (;;)
+        {
+            System.out.println("Bir yazı giriniz");
+            String s = kb.nextLine();
+
+            if ("elma".equals(s))
+                break;
+            System.out.println("Bir sayi giriniz");
+            int count = Integer.parseInt(kb.nextLine());
+            System.out.printf("(%s)%n", StringUtil.padLeading(s, count, 'x'));
+            System.out.printf("(%s)%n", StringUtil.padLeading(s, count));
+            System.out.printf("(%s)%n", StringUtil.padTrailing(s, count, 'x'));
+            System.out.printf("(%s)%n", StringUtil.padTrailing(s, count));
+
+        }
+    }
+}
+class StringUtil
+    {
+    public static String padLeading(String s, int len)
+    {
+        return padLeading(s,len,' ');
+    }
+
+    public static String padLeading(String s, int len, char ch)
+    {
+        int length = s.length();
+
+
+        return len == length ? "" : (ch+"").repeat(len-length) + s;
+    }
+
+    public static String padTrailing(String s, int len)
+    {
+        return padTrailing(s,len,' ');
+    }
+
+    public static String padTrailing(String s, int len, char ch)
+    {
+        int length = s.length();
+
+        return len == length ? "" : s + (ch+"").repeat(len-length);
+
+    }
+
+    /*----------------------------------------------------------------------------------------------------------------------
+    Bir yazıyı istenilen karakter sayısına ve karaktere göre besleye kod yapısı. Java 11 öncesi için repeat methodunu kendimniz yazdık
+    -----------------------------------------------------------------------------------------------------------------------*/
+    class padLeadingTrailing
+    {
+        public static void run()
+        {
+            Scanner kb = new Scanner(System.in);
+
+            for (;;)
+            {
+                System.out.println("Bir yazı giriniz");
+                String s = kb.nextLine();
+
+                if ("elma".equals(s))
+                    break;
+                System.out.println("Bir sayi giriniz");
+                int count = Integer.parseInt(kb.nextLine());
+                System.out.printf("(%s)%n", StringUtil.padLeading(s, count, 'x'));
+                System.out.printf("(%s)%n", StringUtil.padLeading(s, count));
+                System.out.printf("(%s)%n", StringUtil.padTrailing(s, count, 'x'));
+                System.out.printf("(%s)%n", StringUtil.padTrailing(s, count));
+
+            }
+        }
+    }
+    class StringUtil
+        {
+        public static String padLeading(String s, int len)
+        {
+            return padLeading(s,len,' ');
+        }
+
+        public static String padLeading(String s, int len, char ch)
+        {
+            int length = s.length();
+
+            return len == length ? "" : repeat(len-length,ch) + s ;
+        }
+
+        public static String padTrailing(String s, int len)
+        {
+            return padTrailing(s,len,' ');
+        }
+
+        public static String padTrailing(String s, int len, char ch)
+        {
+            int length = s.length();
+
+            return len == length ? "" : s + repeat(len-length,ch);
+
+        }
+
+        public static String repeat(int count, char ch)
+        {
+            String str = "";
+            while(count-- >= 0) str += ch;
+
+            return str;
+        }
+        }
+
+
