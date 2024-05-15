@@ -1,4 +1,4 @@
-package isPyramid;
+package isPyramid.src.isPyramid;
 
 public class App {
 	

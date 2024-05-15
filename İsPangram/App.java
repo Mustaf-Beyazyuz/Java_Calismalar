@@ -1,4 +1,4 @@
-package sPangram;
+package İsPangram;
 
     class App {
         public static void main(String [] args)

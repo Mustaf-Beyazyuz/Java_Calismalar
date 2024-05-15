@@ -1,4 +1,4 @@
-package isGetPrime;
+package isGetPrime.src.isGetPrime;
 
 public class app {
 	public static void main(String [] args)	
