@@ -1,0 +1,111 @@
+Ders 28 compareTo Methotları
+
+
+/*----------------------------------------------------------------------------------------------------------------------
+	String sınıfının compareTo metodu
+		s1.compareTo(s2);
+	çağrısı için
+	1. Geri dönüş değeri negatif ise s1 yazısı, s2 yazısından önce gelir.
+	2. Geri dönüş değeri pozitif ise s2 yazısı, s1 yazısından önce gelir.
+	2. Geri dönüş değeri sıfır ise s1 ve s2 aynı yazılardır
+
+	Karşılaştırma default olarakkarakter tablosundaki sıra numaraları kullanılarak, "lexicographically" olarak
+	yapılır. Bu metot case sensitive olarak çalışır. Sırayla harf kaşlılaştırması yapılır.
+-----------------------------------------------------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------------------------------------------
+	String sınıfının compareToIgnoreCase metodu compareTo gibi çalışır ancak karşılaştırma case insensitive olarak
+	yapılır
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+
+		for (;;) {
+			System.out.print("Birinci yazıyı giriniz:");
+			String s1 = kb.nextLine();
+
+			if ("elma".equals(s1))
+				break;
+
+			System.out.print("İkinci yazıyı giriniz:");
+			String s2 = kb.nextLine();
+
+			int result = s1.compareToIgnoreCase(s2);
+
+			System.out.printf("Result:%d%n", result);
+
+			if (result < 0)
+				System.out.printf("'%s' yazısı '%s' yazısından önce gelir%n", s1, s2);
+			else if (result > 0)
+				System.out.printf("'%s' yazısı '%s' yazısından önce gelir%n", s2, s1);
+			else
+				System.out.printf("'%s' ve '%s' aynı yazılardır%n", s1, s2);
+		}
+	}
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------
+	String sınıfının contains metodu yazı içerisinde paramtresi ile aldığı yazının olup olmadığını test eder.
+	Bu metot case sensitive olarak çalışır
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+
+		for (;;) {
+			System.out.print("Birinci yazıyı giriniz:");
+			String s1 = kb.nextLine();
+
+			if ("elma".equals(s1))
+				break;
+
+			System.out.print("İkinci yazıyı giriniz:");
+			String s2 = kb.nextLine();
+
+			if (s1.contains(s2))
+				System.out.println("Yazı bulundu");
+			else
+				System.out.println("Yazı bulunamadı!...");
+		}
+	}
+}
+
+
+	Aşağıdaki örnekte case insensitive olarak kontrol için yazılar küçük harfe çevrilmiştir
+-----------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+
+		for (;;) {
+			System.out.print("Birinci yazıyı giriniz:");
+			String s1 = kb.nextLine();
+
+			if ("elma".equals(s1))
+				break;
+
+			System.out.print("İkinci yazıyı giriniz:");
+			String s2 = kb.nextLine();
+
+			if (s1.toLowerCase().contains(s2.toLowerCase()))
+				System.out.println("Yazı bulundu");
+			else
+				System.out.println("Yazı bulunamadı!...");
+		}
+	}
+}
